@@ -472,7 +472,7 @@ mark,
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 
@@ -797,6 +797,14 @@ pre code {
 
 .offset-6 {
   margin-left: 50%;
+}
+
+/* Ensure main content is above the background canvas */
+.container-fluid,
+.resume-section,
+.resume-section-content {
+  position: relative;
+  z-index: 1;
 }
 
 .offset-7 {
