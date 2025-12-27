@@ -58,7 +58,7 @@ function App() {
           handle="ngajare"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="../profilepic4.png"
+          avatarUrl="../profilepic2.png"
           grainUrl='../grain.png'
           showUserInfo={true}
           enableTilt={true}
