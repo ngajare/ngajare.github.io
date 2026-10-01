@@ -52,8 +52,7 @@ export function About() {
       <Reveal className="about-grid">
         <div>
           <p className="lead-text">
-            I’m an EECS student at <strong>UC Berkeley</strong> (graduating Dec 2026) working where AI meets hardware:
-            LLM agents that write faster TPU kernels, GNNs for chip physical design, and CPUs built from scratch in Verilog.
+            I’m an EECS student at <strong>UC Berkeley</strong> (graduating Dec 2026) working on ML systems.
           </p>
           <p>
             Right now I’m researching LLM-driven kernel optimization with Professor Alvin Cheung in the Sky Computing Lab.

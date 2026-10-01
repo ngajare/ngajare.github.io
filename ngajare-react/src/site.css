@@ -146,23 +146,6 @@ body { color: var(--ink-soft); background: linear-gradient(to bottom, #98b0b5, #
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Stats */
-.stats {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 3.5rem;
-}
-@media (max-width: 900px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.stat {
-  background: var(--glass); border: 1px solid var(--glass-border); backdrop-filter: blur(12px);
-  border-radius: 1rem; padding: 1.1rem 1.25rem; box-shadow: var(--shadow);
-  transition: transform .25s ease;
-}
-.stat:hover { transform: translateY(-4px); }
-.stat-value {
-  font-family: "Saira Extra Condensed", sans-serif; font-weight: 700; font-size: 2.6rem; line-height: 1;
-  color: var(--accent); font-variant-numeric: tabular-nums;
-}
-.stat-label { font-size: .85rem; color: var(--ink-soft); margin-top: .35rem; }
-
 .scroll-cue {
   position: absolute; left: 50%; bottom: 1.8rem; width: 1.6rem; height: 2.6rem;
   border: 2px solid var(--ink); border-radius: 1rem; opacity: .55; transform: translateX(-50%);

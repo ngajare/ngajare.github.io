@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DecryptedText from '../blocks/TextAnimations/DecryptedText/DecryptedText';
 import { contact } from '../data/resume';
 
@@ -20,13 +20,6 @@ const TERMINAL: { cmd: string; out: string[] }[] = [
     out: ['a7f3e21 ML Intern @ Apple', '4c9b0d8 SWE Intern @ Amazon', '1e5a6f2 AI Researcher @ BAIR + Sky Lab'],
   },
   { cmd: 'ls trophies/', out: ['apple_fpga_contest_1st.txt  nvidia_merit_scholar.txt'] },
-];
-
-const STATS = [
-  { value: 3, suffix: '×', decimals: 0, label: 'TPU v6 kernel speedup' },
-  { value: 90, suffix: '%', decimals: 0, label: 'less on-call triage at Amazon' },
-  { value: 125, suffix: ' MHz', decimals: 0, label: 'RISC-V CPU, 1.06 CPI' },
-  { value: 3.9, suffix: '', decimals: 1, label: 'GPA in Berkeley EECS' },
 ];
 
 // Flattened transcript: commands get "typed", output lines appear instantly.
@@ -88,37 +81,6 @@ function Rotator() {
   );
 }
 
-function Stat({ value, suffix, decimals, label }: (typeof STATS)[number]) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(0);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let raf = 0;
-    const io = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      io.disconnect();
-      const start = performance.now();
-      const tick = (now: number) => {
-        const p = Math.min((now - start) / 1400, 1);
-        setShown(value * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) raf = requestAnimationFrame(tick);
-      };
-      raf = requestAnimationFrame(tick);
-    });
-    io.observe(el);
-    return () => { io.disconnect(); cancelAnimationFrame(raf); };
-  }, [value]);
-
-  return (
-    <div className="stat" ref={ref}>
-      <div className="stat-value">{shown.toFixed(decimals)}{suffix}</div>
-      <div className="stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function Hero() {
   return (
     <header className="hero" id="page-top">
@@ -159,9 +121,6 @@ export default function Hero() {
           </div>
         </div>
         <Typewriter />
-      </div>
-      <div className="stats">
-        {STATS.map(s => <Stat key={s.label} {...s} />)}
       </div>
       <a className="scroll-cue" href="#about" aria-label="Scroll to about"><span /></a>
     </header>
