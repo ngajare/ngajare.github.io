@@ -52,12 +52,13 @@ export function About() {
       <Reveal className="about-grid">
         <div>
           <p className="lead-text">
-            I’m an EECS student at <strong>UC Berkeley</strong> (graduating Dec 2026) working on ML systems.
+            I’m an EECS student at UC Berkeley (graduating Dec 2026) working on ML systems.
+
           </p>
           <p>
-            Right now I’m researching LLM-driven kernel optimization with Professor Alvin Cheung in the Sky Computing Lab.
-            This past summer I was an ML intern at Apple working on physical design for Apple silicon, and before that I
-            hunted agentic bots as a SWE intern at Amazon.
+            I’m interested in ML and systems, especially where good engineering can make things dramatically faster and more useful. I like building systems that are low-latency, high-throughput, and durable enough to matter in the real world.
+
+
           </p>
           <p className="muted">P.S. The flying LeBrons are load-bearing. Try moving your mouse.</p>
         </div>
@@ -131,9 +132,6 @@ export function Education() {
               <span className="loc"><i className="fas fa-map-marker-alt" /> {education.location}</span>
             </div>
           </div>
-          <div className="gpa-ring" style={{ ['--pct' as string]: `${(Number(education.gpa) / 4) * 100}` }}>
-            <div><strong>{education.gpa}</strong><span>GPA</span></div>
-          </div>
           <h4 className="mini-heading">Relevant coursework</h4>
           <Tags items={education.coursework} />
           <h4 className="mini-heading">Societies</h4>
@@ -146,7 +144,7 @@ export function Education() {
 
 export function Awards() {
   return (
-    <Section id="awards" title="Awards" eyebrow="04 — hardware (the shiny kind)">
+    <Section id="awards" title="Awards" eyebrow="04 — hardware">
       <div className="award-grid">
         {awards.map((a, i) => {
           const body = (

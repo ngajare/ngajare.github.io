@@ -67,7 +67,7 @@ function App() {
           <Projects />
           <Skills />
           <footer className="site-footer">
-            Built with React &amp; a flock of flying LeBrons · © {new Date().getFullYear()} Neel Gajare
+            © {new Date().getFullYear()} Neel Gajare
           </footer>
         </div>
       </main>
