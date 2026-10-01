@@ -2,6 +2,8 @@ import './index.css';
 import BackgroundCanvas from './BackgroundCanvas';
 import ProfileCard from './ProfileCard';
 import confetti from 'canvas-confetti';
+import profilePic from './assets/profilepic3.png';
+import grain from './assets/grain.png';
 
 function App() {
   return (
@@ -58,8 +60,8 @@ function App() {
           handle="ngajare"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="../profilepic2.png"
-          grainUrl='../grain.png'
+          avatarUrl={profilePic}
+          grainUrl={grain}
           showUserInfo={true}
           enableTilt={true}
           onContactClick={() => console.log('Contact clicked')}
