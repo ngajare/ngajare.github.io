@@ -2,7 +2,7 @@ import './index.css';
 import BackgroundCanvas from './BackgroundCanvas';
 import ProfileCard from './ProfileCard';
 import confetti from 'canvas-confetti';
-import profilePic from './assets/profilepic3.png';
+import profilePic from './assets/profilepic2.png';
 import grain from './assets/grain.png';
 
 function App() {
