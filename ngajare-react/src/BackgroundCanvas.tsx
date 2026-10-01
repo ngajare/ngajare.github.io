@@ -5,7 +5,9 @@ const particleImages = [
   // Add more images if desired, e.g. 'curry1.png', 'messi.png', etc.
 ];
 
-const particleCount = 60;
+// 60 LeBrons on a typical laptop screen, thinned out on smaller viewports.
+const particleCount = () =>
+  Math.max(18, Math.round(60 * Math.min(1, (window.innerWidth * window.innerHeight) / (1440 * 900))));
 
 const BackgroundCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -114,7 +116,7 @@ const BackgroundCanvas: React.FC = () => {
     // Initialize particles
     const initParticles = () => {
       particles.current = [];
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0, n = particleCount(); i < n; i++) {
         particles.current.push(new Particle());
       }
     };
