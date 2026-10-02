@@ -95,6 +95,40 @@ export const agu = {
     'https://agu2022fallmeeting-agu.ipostersessions.com/default.aspx?s=09-E0-A3-22-69-19-B2-32-BA-E1-8A-22-20-10-77-6E',
 };
 
+export interface Publication {
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  summary: string;
+  links: { label: string; url: string }[];
+}
+
+export const publications: Publication[] = [
+  {
+    title: 'Playing Psychic: Using Thought Trees to Predict Reasoning Models Accuracy on Coding Tasks',
+    authors: 'Jiaxin Fang, Runyuan He, Sahil Bhatia, Neel Gajare, Alvin Cheung',
+    venue: 'COLM',
+    year: '2025',
+    summary:
+      'Represents reasoning traces as structured thought trees and shows that a trace’s structure, not just its contents, strongly predicts whether a reasoning model solves a coding task.',
+    links: [{ label: 'arXiv', url: 'https://arxiv.org/abs/2604.16931' }],
+  },
+  {
+    // TODO: replace with the abstract's exact title and author list.
+    title: 'Complex Basaltic Magma Chamber Geometries',
+    authors: 'Neel Gajare (first author), Stanford Crustal Deformation Lab',
+    venue: 'AGU Fall Meeting',
+    year: '2022',
+    summary:
+      'Uses 3-D meshing, surface-deformation simulation, and Bayesian optimization to compare simple geodetically derived magma chamber geometries with conceptual models of collapsing chambers.',
+    links: [
+      { label: 'Abstract', url: agu.abstract },
+      { label: 'Poster', url: agu.poster },
+    ],
+  },
+];
+
 export const education = {
   school: 'University of California, Berkeley',
   url: 'https://eecs.berkeley.edu/',

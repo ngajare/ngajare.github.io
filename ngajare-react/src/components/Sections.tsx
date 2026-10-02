@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import SpotlightCard from '../blocks/Components/SpotlightCard/SpotlightCard';
 import '../blocks/Components/SpotlightCard/SpotlightCard.css';
-import { agu, awards, contact, education, experience, projects, skills } from '../data/resume';
+import { agu, awards, contact, education, experience, projects, publications, skills } from '../data/resume';
 
 // Fades children up as they scroll into view.
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -191,9 +191,42 @@ export function Projects() {
   );
 }
 
+export function Publications() {
+  return (
+    <Section id="publications" title="Publications" eyebrow="06 — papers">
+      <div className="pub-list">
+        {publications.map((p, i) => (
+          <Reveal key={p.title} delay={i * 90}>
+            <SpotlightCard className="card-x pub-card" spotlightColor="rgba(189, 93, 56, 0.18)">
+              <div className="project-top">
+                <span className="project-highlight">{p.venue}</span>
+                <span className="date-pill">{p.year}</span>
+              </div>
+              <h3 className="pub-title">{p.title}</h3>
+              <div className="pub-authors">
+                {p.authors.split('Neel Gajare').map((part, j, arr) => (
+                  <span key={j}>{part}{j < arr.length - 1 && <strong>Neel Gajare</strong>}</span>
+                ))}
+              </div>
+              <p className="pub-summary">{p.summary}</p>
+              <div className="pub-links">
+                {p.links.map(l => (
+                  <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer">
+                    {l.label} <i className="fas fa-arrow-right" />
+                  </a>
+                ))}
+              </div>
+            </SpotlightCard>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 export function Skills() {
   return (
-    <Section id="skills" title="Skills" eyebrow="06 — toolbox">
+    <Section id="skills" title="Skills" eyebrow="07 — toolbox">
       <div className="skill-groups">
         {Object.entries(skills).map(([group, items], i) => (
           <Reveal key={group} className="skill-group" delay={i * 60}>

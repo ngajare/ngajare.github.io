@@ -311,3 +311,17 @@ section.resume-section { min-height: auto !important; padding-top: 4rem; padding
 .site-footer {
   text-align: center; padding: 2rem 1rem 3rem; font-family: var(--mono); font-size: .8rem; color: var(--ink-soft);
 }
+
+/* Publications */
+.pub-list { display: flex; flex-direction: column; gap: 1.4rem; }
+.pub-title {
+  font-family: "Muli", sans-serif; text-transform: none; font-weight: 800;
+  font-size: 1.35rem; line-height: 1.35; color: var(--ink); margin: 0 0 .5rem;
+}
+.pub-authors { font-size: .95rem; margin-bottom: .8rem; }
+.pub-authors strong { color: var(--ink); }
+.pub-summary { line-height: 1.65; margin-bottom: 1rem; }
+.pub-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.pub-links a { font-weight: 800; color: var(--accent-2); text-decoration: none !important; }
+.pub-links a .fa-arrow-right { font-size: .75em; transition: transform .2s; }
+.pub-links a:hover .fa-arrow-right { transform: translateX(4px); }

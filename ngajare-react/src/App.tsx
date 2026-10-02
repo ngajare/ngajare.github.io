@@ -4,10 +4,10 @@ import './site.css';
 import BackgroundCanvas from './BackgroundCanvas';
 import confetti from 'canvas-confetti';
 import Hero from './components/Hero';
-import { About, Awards, Education, Experience, Projects, Skills } from './components/Sections';
+import { About, Awards, Education, Experience, Projects, Publications, Skills } from './components/Sections';
 import { contact } from './data/resume';
 
-const NAV = ['about', 'experience', 'education', 'awards', 'projects', 'skills'];
+const NAV = ['about', 'experience', 'education', 'awards', 'projects', 'publications', 'skills'];
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
             <img
               className="img-fluid img-profile rounded-circle mx-auto mb-2 button"
               role="button"
-              src="profilepic.jpg"
+              src="profilepic2-crop.jpg"
               alt="Profile"
               onClick={(e) => {
                 const rect = (e.target as HTMLImageElement).getBoundingClientRect();
@@ -65,6 +65,7 @@ function App() {
           <Education />
           <Awards />
           <Projects />
+          <Publications />
           <Skills />
           <footer className="site-footer">
             © {new Date().getFullYear()} Neel Gajare
