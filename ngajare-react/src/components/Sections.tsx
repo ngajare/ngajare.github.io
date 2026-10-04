@@ -203,11 +203,7 @@ export function Publications() {
                 <span className="date-pill">{p.year}</span>
               </div>
               <h3 className="pub-title">{p.title}</h3>
-              <div className="pub-authors">
-                {p.authors.split('Neel Gajare').map((part, j, arr) => (
-                  <span key={j}>{part}{j < arr.length - 1 && <strong>Neel Gajare</strong>}</span>
-                ))}
-              </div>
+              <div className="pub-authors">{p.authors}</div>
               <p className="pub-summary">{p.summary}</p>
               <div className="pub-links">
                 {p.links.map(l => (

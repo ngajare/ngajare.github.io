@@ -115,11 +115,10 @@ export const publications: Publication[] = [
     links: [{ label: 'arXiv', url: 'https://arxiv.org/abs/2604.16931' }],
   },
   {
-    // TODO: replace with the abstract's exact title and author list.
     title: 'Complex Basaltic Magma Chamber Geometries',
-    authors: 'Neel Gajare (first author), Stanford Crustal Deformation Lab',
+    authors: 'Neel Gajare, Taiyi Wang, Paul Segall',
     venue: 'AGU Fall Meeting',
-    year: '2022',
+    year: '2023',
     summary:
       'Uses 3-D meshing, surface-deformation simulation, and Bayesian optimization to compare simple geodetically derived magma chamber geometries with conceptual models of collapsing chambers.',
     links: [
@@ -181,11 +180,22 @@ export const projects: Project[] = [
     name: 'RISC-V CPU on FPGA',
     stack: ['Verilog', 'Vivado', 'FPGA'],
     dates: 'Jan 2025 – May 2025',
-    highlight: '125 MHz · 1.06 CPI · 1st place',
+    highlight: 'Make CPU go brrrr',
     bullets: [
       'Implemented a 5-stage pipelined RISC-V CPU on FPGA with UART tethering, BIOS functionality, and synchronous memories.',
       'Hit a 125 MHz clock and 1.06 average CPI across benchmarks by resolving pipeline hazards and designing a pipelined hybrid Gshare branch predictor + branch target buffer + return address stack.',
       'Achieved the highest figure-of-merit score in Berkeley’s Apple-sponsored digital design competition.',
+    ],
+  },
+  {
+    name: 'Pintos Operating System',
+    stack: ['C'],
+    dates: 'Jan 2026 – May 2026',
+    highlight: 'Manage OS internals',
+    bullets: [
+      'Extended the Pintos kernel with system calls, user-memory validation, and process lifecycle management, including parent-child synchronization and per-process file descriptor tables.',
+      'Implemented kernel-backed user threads with create/join/exit operations, per-thread stacks, and locks and semaphores to coordinate shared resources and process teardown.',
+      'Built an extensible file system with indexed inodes, hierarchical directories, and a 64-entry write-back buffer cache using clock eviction and per-inode locking for concurrent file access.',
     ],
   },
   {
@@ -197,6 +207,28 @@ export const projects: Project[] = [
       'Real-time 3D visualization that turns ChatGPT and Claude conversation histories into interactive, AI-labeled semantic clusters using Voyage embeddings and Claude Sonnet 4 for topic detection and RAG.',
       'High-performance React + Three.js frontend with GPU-accelerated WebGL shaders; Flask backend with multi-user support, live API updates, pgvector semantic search, and dynamic clustering.',
       'Resilient NLP pipeline with SpaCy, UMAP, KMeans, and Claude auto-labeling; cross-platform chat parsing and smooth filtering, zooming, and exploration.',
+    ],
+  },
+  {
+    name: 'UniTrial',
+    stack: ['Python', 'Firebase', 'Streamlit', 'HuggingFace', 'ChromaDB', 'Mistral AI'],
+    dates: 'Jun 2024',
+    highlight: 'Matching patients to clinical trials',
+    bullets: [
+      'Developed a RAG system to match patient EHR profiles and medical condition descriptions with clinical trials using Mistral-7B.',
+      'Implemented a novel data schema leveraging FHIR and MeSH IDs to log medically relevant tags, preventing hallucinations from unstructured data.',
+      'Created a RAG pipeline with a chat interface for users to ask questions about trials and get a diagnosis.',
+    ],
+  },
+  {
+    name: 'Voice-Controlled Car',
+    stack: ['Arduino', 'Python'],
+    dates: 'Jan 2024 – May 2024',
+    highlight: 'Talk to it, it drives',
+    bullets: [
+      'Built a mic board with a band-pass filter to isolate human voice frequencies for voice recognition.',
+      'Used PCA to classify words so the car recognizes and responds to commands correctly.',
+      'Implemented closed-loop feedback on a microcontroller using encoder data so the car drives straight and turns accurately.',
     ],
   },
 ];
